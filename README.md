@@ -27,6 +27,8 @@ Meta-works on testability and methodology in consciousness science, including:
 - Methodological frameworks for testing consciousness theories
 - Databases and tools for empirical comparison
 
+![ConTraSt Chart](ConTraSt-chart.png)
+
 ### [`bach.md`](bach.md)
 A bibliography of Joscha Bach's work on artificial intelligence and consciousness, including:
 - MicroPsi agent architecture and framework
