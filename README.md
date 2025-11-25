@@ -20,6 +20,13 @@ A comprehensive bibliography of major theories of consciousness, organized by th
 - **Recurrent Processing Theory (RPT)** — Lamme and colleagues
 - **Predictive Processing (PP)** — Hohwy, Clark, Seth, and others
 
+### [`meta-works-including-testability.md`](meta-works-including-testability.md)
+Meta-works on testability and methodology in consciousness science, including:
+- Comparative analyses of consciousness theories
+- Adversarial collaboration protocols
+- Methodological frameworks for testing consciousness theories
+- Databases and tools for empirical comparison
+
 ### [`bach.md`](bach.md)
 A bibliography of Joscha Bach's work on artificial intelligence and consciousness, including:
 - MicroPsi agent architecture and framework
