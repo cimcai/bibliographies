@@ -6,6 +6,10 @@ A curated collection of academic bibliographies focused on consciousness, artifi
 
 This repository contains organized bibliographies covering key topics in consciousness research, AI architectures, and foundational theories in cognitive science. The bibliographies are maintained as markdown files for easy reading and reference.
 
+## Citation Format
+
+Citations follow APA style where applicable, with DOIs and links to sources included when available. Note that citation formatting may vary slightly between files to accommodate different source types (journal articles, books, preprints, etc.).
+
 ## Contents
 
 ### [`theories-of-consciousness.md`](theories-of-consciousness.md)
@@ -40,3 +44,6 @@ Each bibliography file contains citations in a consistent format with links to s
 
 Contributions and suggestions for additional references are welcome. Please maintain the existing citation format and organizational structure when adding new entries.
 
+## License
+
+This repository is provided as-is for educational and research purposes. Individual works cited remain the property of their respective authors and publishers.
