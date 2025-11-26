@@ -45,6 +45,12 @@ Foundational papers and key references covering:
 - Minimal phenomenal experience
 - World modeling theories
 
+### [`artificial-life.md`](artificial-life.md)
+Key works on artificial and computational life, including:
+- BFF-style computational life and symbiogenesis
+- Foundational artificial life proceedings and open problems
+- Digital ecologies, Polyworld, and evolving neural complexity
+
 ## Usage
 
 Each bibliography file contains citations in a consistent format with links to sources where available. Use these bibliographies as reference materials for research, literature reviews, or academic work in consciousness studies, AI, and cognitive science.
