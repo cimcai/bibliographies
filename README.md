@@ -51,6 +51,12 @@ Key works on artificial and computational life, including:
 - Foundational artificial life proceedings and open problems
 - Digital ecologies, Polyworld, and evolving neural complexity
 
+### [`computationalism.md`](computationalism.md)
+Works on computationalism and the computational theory of mind.
+
+### [`deep-learning.md`](deep-learning.md)
+Works on deep learning and neural networks.
+
 ## Usage
 
 Each bibliography file contains citations in a consistent format with links to sources where available. Use these bibliographies as reference materials for research, literature reviews, or academic work in consciousness studies, AI, and cognitive science.
