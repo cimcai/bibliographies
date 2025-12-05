@@ -1,6 +1,6 @@
 # Philosophy
 
-# ## Ancient Greek Philosophy
+## Ancient Greek Philosophy
 
 **Plato. (c. 380 BCE).** *The Republic*.
 **Plato. (c. 360 BCE).** *Phaedrus*.
@@ -14,7 +14,7 @@
 
 ---
 
-# ## Hellenistic & Roman Philosophy
+## Hellenistic & Roman Philosophy
 
 **Epictetus. (c. 108 CE).** *Discourses*.
 **Marcus Aurelius. (c. 180 CE).** *Meditations*.
@@ -24,7 +24,7 @@
 
 ---
 
-# ## Early Christian, Medieval, and Scholastic Philosophy
+## Early Christian, Medieval, and Scholastic Philosophy
 
 **Augustine. (c. 400 CE).** *Confessions*.
 **Anselm of Canterbury. (1077).** *Proslogion*.
@@ -37,7 +37,7 @@
 
 ---
 
-# ## Renaissance & Early Modern Philosophy
+## Renaissance & Early Modern Philosophy
 
 **Machiavelli, N. (1532).** *The prince*.
 **Hobbes, T. (1651).** *Leviathan*.
@@ -59,7 +59,7 @@
 
 ---
 
-# ## Enlightenment & Revolutionary Era
+## Enlightenment & Revolutionary Era
 
 **Rousseau, J.-J. (1762).** *The social contract*.
 
@@ -71,7 +71,7 @@
 
 ---
 
-# ## German Idealism
+## German Idealism
 
 **Fichte, J. G. (1794).** *Science of knowledge*.
 **Schelling, F. W. J. (1800).** *System of transcendental idealism*.
@@ -81,7 +81,7 @@
 
 ---
 
-# ## 19th Century Philosophy
+## 19th Century Philosophy
 
 **Schopenhauer, A. (1818).** *The world as will and representation*.
 
