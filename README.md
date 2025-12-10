@@ -66,7 +66,7 @@ The [`library/`](library/) subfolder contains extensive bibliographies organized
 - **[Computer Science.md](library/Computer%20Science.md)** — 77 works (algorithms, programming, systems, AI)
 - **[Psychology.md](library/Psychology.md)** — 18 works (cognitive, developmental, behavioral psychology)
 - **[Computationalism.md](library/Computationalism.md)** — 69 works (computational theory of mind, connectionism, neurophilosophy, AI)
-- **[Science Fiction.md](library/Science%20Fiction.md)** — 0 works (stub)
+- **[Science Fiction.md](library/Science%20Fiction.md)** — 94 works (science fiction literature from 1920s to present)
 
 ## Usage
 
