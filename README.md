@@ -57,6 +57,17 @@ Works on computationalism and the computational theory of mind.
 ### [`deep-learning.md`](deep-learning.md)
 Works on deep learning and neural networks.
 
+## Library
+
+The [`library/`](library/) subfolder contains extensive bibliographies organized by discipline:
+
+- **[Philosophy.md](library/Philosophy.md)** — 179 works (chronological from ancient to contemporary)
+- **[Cybernetics.md](library/Cybernetics.md)** — 77 works (systems theory, complexity, information theory)
+- **[Computer Science.md](library/Computer%20Science.md)** — 77 works (algorithms, programming, systems, AI)
+- **[Psychology.md](library/Psychology.md)** — 18 works (cognitive, developmental, behavioral psychology)
+- **[Computationalism.md](library/Computationalism.md)** — 0 works (stub)
+- **[Science Fiction.md](library/Science%20Fiction.md)** — 0 works (stub)
+
 ## Usage
 
 Each bibliography file contains citations in a consistent format with links to sources where available. Use these bibliographies as reference materials for research, literature reviews, or academic work in consciousness studies, AI, and cognitive science.
