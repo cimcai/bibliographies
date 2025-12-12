@@ -1,4 +1,4 @@
-## Bibliograph of works referenced in the seminar
+## Bibliography of works referenced in the seminar
 
 Participants: Joscha Bach, Paul Borrill, Hikari Sorensen, Dave Kammeyer, Joel Dietz, Erik Newton 
 
