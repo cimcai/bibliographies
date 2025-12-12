@@ -10,9 +10,11 @@ This repository contains organized bibliographies covering key topics in conscio
 
 Citations follow APA style where applicable, with DOIs and links to sources included when available. Note that citation formatting may vary slightly between files to accommodate different source types (journal articles, books, preprints, etc.).
 
-## Contents
+## General
 
-### [`theories-of-consciousness.md`](theories-of-consciousness.md)
+The [`general/`](general/) folder contains focused bibliographies on consciousness, AI, and related topics:
+
+### [`theories-of-consciousness.md`](general/theories-of-consciousness.md)
 A comprehensive bibliography of major theories of consciousness, organized by theoretical framework:
 - **Global Neuronal Workspace Theory (GNWT)** — Baars, Dehaene, Changeux, and colleagues
 - **Higher-Order Thought (HOT) Theories** — Rosenthal, Carruthers, and others
@@ -20,23 +22,23 @@ A comprehensive bibliography of major theories of consciousness, organized by th
 - **Recurrent Processing Theory (RPT)** — Lamme and colleagues
 - **Predictive Processing (PP)** — Hohwy, Clark, Seth, and others
 
-### [`meta-works-including-testability.md`](meta-works-including-testability.md)
+### [`meta-works-including-testability.md`](general/meta-works-including-testability.md)
 Meta-works on testability and methodology in consciousness science, including:
 - Comparative analyses of consciousness theories
 - Adversarial collaboration protocols
 - Methodological frameworks for testing consciousness theories
 - Databases and tools for empirical comparison
 
-![ConTraSt Chart](ConTraSt-chart.png)
+![ConTraSt Chart](general/ConTraSt-chart.png)
 
-### [`bach.md`](bach.md)
+### [`bach.md`](general/bach.md)
 A bibliography of Joscha Bach's work on artificial intelligence and consciousness, including:
 - MicroPsi agent architecture and framework
 - Principles of synthetic intelligence
 - Cortical conductor theory
 - Attention-based learning and consciousness in AI models
 
-### [`foundational.md`](foundational.md)
+### [`foundational.md`](general/foundational.md)
 Foundational papers and key references covering:
 - Computational approaches to consciousness and neurophenomenology
 - Bioelectric networks and cognition
@@ -45,16 +47,20 @@ Foundational papers and key references covering:
 - Minimal phenomenal experience
 - World modeling theories
 
-### [`artificial-life.md`](artificial-life.md)
+### [`artificial-life.md`](general/artificial-life.md)
 Key works on artificial and computational life, including:
 - BFF-style computational life and symbiogenesis
 - Foundational artificial life proceedings and open problems
 - Digital ecologies, Polyworld, and evolving neural complexity
 
-### [`computationalism.md`](computationalism.md)
+### [`computationalism.md`](general/computationalism.md)
 Works on computationalism and the computational theory of mind.
 
-### [`deep-learning.md`](deep-learning.md)
+## Seminar
+
+The [`seminar/`](seminar/) folder contains bibliographies for specific seminar topics:
+
+### [`deep-learning.md`](seminar/deep-learning.md)
 Works on deep learning and neural networks.
 
 ## Library
