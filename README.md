@@ -47,6 +47,16 @@ The [`library/`](library/) subfolder contains extensive bibliographies organized
 - **[Computationalism.md](library/Computationalism.md)** — 69 works (computational theory of mind, connectionism, neurophilosophy, AI)
 - **[Science Fiction.md](library/Science%20Fiction.md)** — 94 works (science fiction literature from 1920s to present)
 
+## BibTeX Export
+
+All bibliographies can be exported to BibTeX format using the provided script:
+
+```bash
+python3 export_to_bibtex.py
+```
+
+This will create `.bib` files in the `bibtex/` folder, one for each markdown bibliography file. The exported BibTeX files can be imported into reference managers like Zotero, Mendeley, or used directly with LaTeX.
+
 ## Usage
 
 Each bibliography file contains citations in a consistent format with links to sources where available. Use these bibliographies as reference materials for research, literature reviews, or academic work in consciousness studies, AI, and cognitive science.
