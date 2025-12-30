@@ -10,10 +10,11 @@ from urllib.parse import urlparse
 
 def extract_doi(url):
     """Extract DOI from URL."""
-    if 'doi.org' in url or 'doi:' in url.lower():
-        match = re.search(r'10\.\d+/[^\s\)]+', url)
-        if match:
-            return match.group(0)
+    if url:
+        if 'doi.org' in url or 'doi:' in url.lower():
+            match = re.search(r'10\.\d+/[^\s\)]+', url)
+            if match:
+                return match.group(0)
     return None
 
 def generate_bibtex_key(authors, year, title):
@@ -38,9 +39,6 @@ def parse_citation(line):
     if not line:
         return None
     
-    # Pattern for APA-style citations
-    # Author(s). (Year). Title. Journal/Publisher. DOI/URL
-    
     # Extract URL/DOI if present
     url_match = re.search(r'(https?://[^\s]+|doi\.org/[^\s]+)', line)
     url = url_match.group(0) if url_match else None
@@ -59,18 +57,26 @@ def parse_citation(line):
     else:
         authors_part = line.split('.')[0] if '.' in line else ""
     
-    # Parse authors
+    # Parse authors - handle "&" and "and"
     authors = []
     if authors_part:
-        # Handle "&" and "and" separators
+        # Replace "and" with "&" for consistency
         authors_text = re.sub(r'\s+and\s+', ' & ', authors_part, flags=re.IGNORECASE)
-        author_list = re.split(r',\s*(?=[A-Z][a-z]+(?:\s+[A-Z]\.?)*\s+&)', authors_text)
-        for author in author_list:
-            author = author.replace('&', '').strip()
-            if author:
-                authors.append(author)
+        # Split on commas, but preserve "&" groups
+        parts = re.split(r',\s*(?=[A-Z][a-z]+(?:\s+[A-Z]\.?)*\s*&)', authors_text)
+        for part in parts:
+            # Handle "&" separated authors
+            if '&' in part:
+                for author in part.split('&'):
+                    author = author.strip()
+                    if author:
+                        authors.append(author)
+            else:
+                author = part.strip()
+                if author:
+                    authors.append(author)
     
-    # Extract title (between year and period before journal/publisher)
+    # Extract the rest after year
     if year_match:
         rest = line[year_match.end():].strip()
     else:
@@ -79,45 +85,115 @@ def parse_citation(line):
     # Remove leading period
     rest = re.sub(r'^\.\s*', '', rest)
     
-    # Check if it's a book (italicized title) or article
-    title_match = re.search(r'\*([^*]+)\*', rest)
-    if title_match:
-        title = title_match.group(1).strip()
-        # Remove title from rest
-        rest = rest.replace(f'*{title}*', '').strip()
-    else:
-        # No italicized title, try to extract first sentence
-        title_match = re.match(r'^([^.]+\.[^.]*)', rest)
-        title = title_match.group(1).strip() if title_match else rest.split('.')[0].strip()
-        rest = rest[len(title):].strip() if title_match else rest
+    # Check for "In" pattern (chapter in book)
+    in_match = re.search(r'\.\s+In\s+([^.]+)\.', rest, re.IGNORECASE)
+    is_chapter = bool(in_match)
     
-    # Extract journal/publisher
+    # Extract title - look for text before italicized journal or before "In"
+    title = None
     journal = None
     publisher = None
     volume = None
+    issue = None
     pages = None
+    editors = None
     
-    # Look for journal patterns
-    journal_match = re.search(r'\*([^*]+)\*', rest)
-    if journal_match:
-        journal = journal_match.group(1).strip()
-        rest = rest.replace(f'*{journal}*', '').strip()
-    
-    # Look for volume and pages
-    vol_match = re.search(r'(\d+)\s*\((\d+)\)', rest)
-    if vol_match:
-        volume = vol_match.group(1)
-        rest = rest.replace(vol_match.group(0), '').strip()
-    
-    pages_match = re.search(r'(\d+)\s*[–-]\s*(\d+)', rest)
-    if pages_match:
-        pages = f"{pages_match.group(1)}--{pages_match.group(2)}"
-    
-    # If no journal, might be a book with publisher
-    if not journal and rest:
+    if is_chapter:
+        # Chapter in book: "Title. In Editor (Ed.), Book Title (pp. X-Y). Publisher"
+        title_match = re.match(r'^([^.]+)\.', rest)
+        if title_match:
+            title = title_match.group(1).strip()
+            rest = rest[len(title_match.group(0)):].strip()
+        
+        # Extract editor and book title
+        editor_match = re.search(r'In\s+([^(]+)\s*\(Eds?\.\)', rest, re.IGNORECASE)
+        if editor_match:
+            editors_text = editor_match.group(1).strip()
+            # Parse editors similar to authors
+            editors = []
+            editors_text = re.sub(r'\s+and\s+', ' & ', editors_text, flags=re.IGNORECASE)
+            parts = re.split(r',\s*(?=[A-Z][a-z]+(?:\s+[A-Z]\.?)*\s*&)', editors_text)
+            for part in parts:
+                if '&' in part:
+                    for editor in part.split('&'):
+                        editor = editor.strip()
+                        if editor:
+                            editors.append(editor)
+                else:
+                    editor = part.strip()
+                    if editor:
+                        editors.append(editor)
+            rest = rest[editor_match.end():].strip()
+        
+        # Extract book title (italicized)
+        book_title_match = re.search(r'\*([^*]+)\*', rest)
+        if book_title_match:
+            journal = book_title_match.group(1).strip()  # Using journal field for book title
+            rest = rest.replace(f'*{journal}*', '').strip()
+        
+        # Extract pages
+        pages_match = re.search(r'\(pp\.\s*(\d+)\s*[–-]\s*(\d+)\)', rest)
+        if pages_match:
+            pages = f"{pages_match.group(1)}--{pages_match.group(2)}"
+            rest = rest.replace(pages_match.group(0), '').strip()
+        
+        # Extract publisher
         publisher_match = re.search(r'([A-Z][^.]*(?:Press|Books|Publishers?|University|MIT|Oxford|Cambridge|Springer|Wiley))', rest)
         if publisher_match:
             publisher = publisher_match.group(1).strip()
+    else:
+        # Article or book
+        # Check if there's an italicized title (book) or italicized journal (article)
+        italic_match = re.search(r'\*([^*]+)\*', rest)
+        
+        if italic_match:
+            italic_text = italic_match.group(1).strip()
+            italic_start = italic_match.start()
+            
+            # Text before italic is likely the title
+            before_italic = rest[:italic_start].strip()
+            if before_italic:
+                title = before_italic.rstrip('.').strip()
+            
+            # Check if italic text looks like a journal (has volume/issue pattern or common journal words)
+            journal_pattern = r'\d+.*\d+|Review|Journal|Proceedings|Transactions|Bulletin'
+            if re.search(journal_pattern, italic_text, re.IGNORECASE):
+                # It's a journal
+                journal = italic_text
+                # Extract volume and issue from journal string
+                vol_issue_match = re.search(r'(\d+)\s*\((\d+)\)', italic_text)
+                if vol_issue_match:
+                    volume = vol_issue_match.group(1)
+                    issue = vol_issue_match.group(2)
+                    # Remove volume/issue from journal name
+                    journal = re.sub(r'\s*\d+\s*\(\d+\)', '', journal).strip()
+                else:
+                    # Just volume
+                    vol_match = re.search(r',\s*(\d+)', italic_text)
+                    if vol_match:
+                        volume = vol_match.group(1)
+                        journal = re.sub(r',\s*\d+.*$', '', journal).strip()
+                
+                # Extract pages after journal
+                rest_after = rest[italic_match.end():].strip()
+                pages_match = re.search(r'(\d+)\s*[–-]\s*(\d+)', rest_after)
+                if pages_match:
+                    pages = f"{pages_match.group(1)}--{pages_match.group(2)}"
+            else:
+                # It's a book title
+                title = italic_text
+                # Extract publisher from rest
+                rest_after = rest[italic_match.end():].strip()
+                publisher_match = re.search(r'([A-Z][^.]*(?:Press|Books|Publishers?|University|MIT|Oxford|Cambridge|Springer|Wiley))', rest_after)
+                if publisher_match:
+                    publisher = publisher_match.group(1).strip()
+        else:
+            # No italic text - try to extract title as first sentence
+            title_match = re.match(r'^([^.]+\.[^.]*)', rest)
+            if title_match:
+                title = title_match.group(1).strip()
+            else:
+                title = rest.split('.')[0].strip() if rest else None
     
     return {
         'authors': authors,
@@ -126,9 +202,12 @@ def parse_citation(line):
         'journal': journal,
         'publisher': publisher,
         'volume': volume,
+        'issue': issue,
         'pages': pages,
         'url': url,
-        'doi': extract_doi(url) if url else None
+        'doi': extract_doi(url) if url else None,
+        'editors': editors,
+        'is_chapter': is_chapter
     }
 
 def format_bibtex_entry(citation, entry_type='article'):
@@ -137,7 +216,9 @@ def format_bibtex_entry(citation, entry_type='article'):
         return None
     
     # Determine entry type
-    if citation.get('publisher') and not citation.get('journal'):
+    if citation.get('is_chapter'):
+        entry_type = 'incollection'
+    elif citation.get('publisher') and not citation.get('journal'):
         entry_type = 'book'
     elif citation.get('journal'):
         entry_type = 'article'
@@ -151,13 +232,16 @@ def format_bibtex_entry(citation, entry_type='article'):
         citation.get('title', '')
     )
     
-    # Format authors
+    # Format authors/editors
     authors = ' and '.join(citation.get('authors', []))
+    editors = ' and '.join(citation.get('editors', [])) if citation.get('editors') else None
     
     # Build entry
     fields = []
     if authors:
         fields.append(f"  author = {{{authors}}}")
+    if editors:
+        fields.append(f"  editor = {{{editors}}}")
     if citation.get('year') and citation.get('year') != 'n.d.':
         fields.append(f"  year = {{{citation['year']}}}")
     if citation.get('title'):
@@ -168,6 +252,8 @@ def format_bibtex_entry(citation, entry_type='article'):
         fields.append(f"  publisher = {{{citation['publisher']}}}")
     if citation.get('volume'):
         fields.append(f"  volume = {{{citation['volume']}}}")
+    if citation.get('issue'):
+        fields.append(f"  number = {{{citation['issue']}}}")
     if citation.get('pages'):
         fields.append(f"  pages = {{{citation['pages']}}}")
     if citation.get('doi'):
@@ -248,5 +334,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
