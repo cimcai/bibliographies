@@ -36,8 +36,6 @@
 **Meadows, D. H., Meadows, D. L., Randers, J., & Behrens, W. W. (1972).** *The limits to growth*. Universe Books.
 
 **Prigogine, I., & Stengers, I. (1984).** *Order out of chaos: Man’s new dialogue with nature*. Bantam.
-*(Foundational dissipative systems work begins in the 1970s.)*
-
 **Lovelock, J. (1979).** *Gaia: A new look at life on Earth*. Oxford University Press.
 
 **Beer, S. (1975).** *Platform for change*. Wiley.
@@ -182,7 +180,7 @@
 
 **Hayles, N. K. (1990).** *Chaos bound*. Cornell University Press.
 
-**Braitenberg, V. (1984).** *Vehicles*. MIT Press. *(repeated intentionally for category match)*
+**Braitenberg, V. (1984).** *Vehicles*. MIT Press.
 
 **Kauffman, S. (1993).** *The origins of order*. Oxford University Press.
 

@@ -210,7 +210,7 @@
 
 **Adorno, T. W., & Horkheimer, M. (1947).** *Dialectic of enlightenment*.
 
-**Arendt, H. (1958).** *The human condition*. (Written earlier 1950s; placing by pub date.)
+**Arendt, H. (1958).** *The human condition*.
 
 ---
 
@@ -278,7 +278,7 @@
 
 **Latour, B., & Woolgar, S. (1979).** *Laboratory life*.
 
-**MacIntyre, A. (1981).** *After virtue*. (close to this period, but 1981)
+**MacIntyre, A. (1981).** *After virtue*.
 
 ---
 
@@ -294,7 +294,7 @@
 
 **MacIntyre, A. (1981).** *After virtue*.
 
-**Korsgaard, C. M. (1986).** *The sources of normativity*. (lectures 1992; book 1996 – but we’ll keep late-20C cluster; strictly speaking 1996).
+**Korsgaard, C. M. (1986).** *The sources of normativity*.
 
 **Williams, B. (1985).** *Ethics and the limits of philosophy*.
 
@@ -308,9 +308,9 @@
 
 **Žižek, S. (1989).** *The sublime object of ideology*.
 
-**Dennett, D. C. (1991).** *Consciousness explained*. (close to this era; technically 1991, but we’ll roll into next cluster.)
+**Dennett, D. C. (1991).** *Consciousness explained*.
 
-**Land, N. (1987–2007).** *Fanged noumena: Collected writings 1987–2007*. (collected later; texts mostly in this era).
+**Land, N. (1987–2007).** *Fanged noumena: Collected writings 1987–2007*.
 
 ---
 
@@ -320,9 +320,7 @@
 
 **Dennett, D. C. (1995).** *Darwin’s dangerous idea*.
 
-**Levinas, E. (1974/1998).** *Otherwise than being, or beyond essence*. (Eng. trans. late-20C; core text mid-70s.)
-
-**Gintis, etc., not in this list; continuing:**
+**Levinas, E. (1974/1998).** *Otherwise than being, or beyond essence*.
 
 **Haack, S. (1993).** *Evidence and inquiry*.
 
@@ -334,11 +332,9 @@
 
 **Hacking, I. (1999).** *The social construction of what?*.
 
-**Parfit, D. (1984).** *Reasons and persons*. (chronologically a bit earlier, but we include here in late 20C analytic cluster.)
+**Parfit, D. (1984).** *Reasons and persons*.
 
-**Bostrom not in this list (you had him earlier in a different list); skipping here.**
-
-**Dworkin, R. (1977).** *Taking rights seriously*. (chronologically 1970s but conceptually tied to this cluster.)
+**Dworkin, R. (1977).** *Taking rights seriously*.
 
 **MacIntyre, A. (1988).** *Whose justice? Which rationality?*.
 
@@ -362,15 +358,13 @@
 
 ### 2000–2009
 
-**Dennett, D. C. (1991).** *Consciousness explained*. (strictly 1991, but central to this cluster).
+**Dennett, D. C. (1991).** *Consciousness explained*.
 
 **Metzinger, T. (2003).** *Being no one*.
 
 **Clark, A. (2003).** *Natural-born cyborgs: Minds, technologies, and the future of human intelligence*.
 
 **Gallagher, S. (2005).** *How the body shapes the mind*.
-
-**Waldrop, complexity etc. were in another list; here we stick to your philosophy set.**
 
 **Thompson, E. (2007).** *Mind in life: Biology, phenomenology, and the sciences of mind*.
 
@@ -386,7 +380,7 @@
 
 **Noë, A. (2009).** *Out of our heads: Why you are not your brain, and other lessons from the biology of consciousness*.
 
-**Wolf, S. (2010).** *Meaning in life and why it matters*. (just over into the next decade but conceptually part of this wave.)
+**Wolf, S. (2010).** *Meaning in life and why it matters*.
 
 **Frankfurt, H. G. (2005).** *On bullshit*.
 
@@ -410,7 +404,7 @@
 
 **Nielsen, M., & Hanson, R. (2018).** *The elephant in the brain: Hidden motives in everyday life*.
 
-**Alexander, S. (2016).** *Unsong*. (online novel).
+**Alexander, S. (2016).** *Unsong*.
 
-**Land, N. (2012).** *The dark enlightenment*. (online essay; clustered here as it becomes influential in this era).
+**Land, N. (2012).** *The dark enlightenment*.
 

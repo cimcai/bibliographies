@@ -22,7 +22,7 @@
 
 **Jung, C. G. (1963).** *Memories, dreams, reflections* (A. Jaffé, Ed.; R. & C. Winston, Trans.). Pantheon.
 
-**Lacan, J. (2006).** *Écrits* (B. Fink, Trans.). W. W. Norton. *(Original work published 1966.)*
+**Lacan, J. (2006).** *Écrits* (B. Fink, Trans.). W. W. Norton.
 
 ---
 
@@ -51,4 +51,3 @@
 **Ortony, A., Clore, G. L., & Collins, A. (1988).** *The cognitive structure of emotions*. Cambridge University Press.
 
 **Dörner, D. (1989/1999).** *The logic of failure: Recognizing and avoiding error in complex situations* (R. Kimber, Trans.). Basic Books.
-*(Note: This is the closest English-language publication to Dörner’s *Blueprint for a Thinking Machine*, which has no standard English edition.)*
